@@ -1,0 +1,29 @@
+apiVersion: mysql.oracle.com/v1alpha1
+kind: Cluster
+metadata:
+  name: my-app-db
+  namespace: my-namespace
+spec:
+  members: 1
+  rootPasswordSecret:
+    name: mysql-secrets
+  volumeClaimTemplate:
+    metadata:
+      name: data
+    spec:
+      storageClassName: "local-storage"
+      accessModes:
+        - ReadWriteMany
+      resources:
+        requests:
+          storage: 10Gi
+  # backupVolumeClaimTemplate:
+  #   metadata:
+  #     name: backup-data
+  #   spec:
+  #     storageClassName: manual
+  #     accessModes:
+  #       - ReadWriteMany
+  #     resources:
+  #       requests:
+  #         storage: 1Gi
