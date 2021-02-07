@@ -1,3 +1,0 @@
-namespace: ingress-nginx
-bases:
-  - github.com/kubernetes/ingress-nginx/deploy/static/provider/baremetal?ref=master

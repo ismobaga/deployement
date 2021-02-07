@@ -1,3 +1,5 @@
 
 resources:
-  - nginx-ingress
+  - ingress-nginx
+  - prometheus
+  - grafana
